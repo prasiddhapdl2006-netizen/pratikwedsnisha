@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#9e1b22" />
+  <title>Pratik &amp; Nisha · 19.08.2083</title>
+  <meta name="description" content="Together with their families, Pratik & Nisha joyfully invite you to celebrate their wedding." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Karma:wght@400;500;600;700&family=Yatra+One&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- start first-screen media downloading immediately -->
+  <link rel="preload" as="image" href="assets/media/img1.jpeg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/media/hero.png" />
+  <link rel="preload" as="image" href="assets/media/nepali-hero.png" />
+  <link rel="preload" as="image" href="assets/media/background.png" />
+</head>
+<body>
+
+  <!-- Floating Language Switcher -->
+  <div class="lang-switch-container">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ne">ने</button>
+  </div>
+
+  <!-- watercolour backdrop across the whole page -->
+  <div class="bg-layer" aria-hidden="true"></div>
+
+  <!-- ============ PHOTO INTRO (slideshow · zoom reveal) ============ -->
+  <div id="intro" class="intro">
+    <div class="intro-bg" aria-hidden="true">
+      <div class="islide s1"></div><div class="islide s2"></div><div class="islide s3"></div>
+      <div class="islide s4"></div><div class="islide s5"></div>
+    </div>
+    <div class="intro-veil" aria-hidden="true"></div>
+    <div class="intro-frame" aria-hidden="true"></div>
+    <div class="intro-content" id="curtainPrompt">
+      <div class="intro-orn">&#10047;</div>
+      <p class="intro-sub">
+        <span class="l-en">Together with their families</span>
+        <span class="l-ne">सपरिवार हार्दिक निमन्त्रणा</span>
+      </p>
+      <h1 class="intro-names">
+        <span class="l-en">Pratik <span>&amp;</span> Nisha</span>
+        <span class="l-ne">प्रतिक <span>र</span> निशा</span>
+      </h1>
+      <div class="intro-line"></div>
+      <p class="intro-date">
+        <span class="l-en">05 &middot; 12 &middot; 2026</span>
+        <span class="l-ne">१९ &middot; ०८ &middot; २०८३</span>
+      </p>
+      <div class="intro-countdown countdown" data-target="2026-12-05T12:00:00+05:45">
+        <div class="icd-item">
+          <span class="icd-num" data-cd="days">--</span>
+          <span class="icd-lab">
+            <span class="l-en">Days</span>
+            <span class="l-ne">दिन</span>
+          </span>
+        </div>
+        <div class="icd-sep">:</div>
+        <div class="icd-item">
+          <span class="icd-num" data-cd="hours">--</span>
+          <span class="icd-lab">
+            <span class="l-en">Hrs</span>
+            <span class="l-ne">घण्टा</span>
+          </span>
+        </div>
+        <div class="icd-sep">:</div>
+        <div class="icd-item">
+          <span class="icd-num" data-cd="mins">--</span>
+          <span class="icd-lab">
+            <span class="l-en">Min</span>
+            <span class="l-ne">मिनेट</span>
+          </span>
+        </div>
+        <div class="icd-sep">:</div>
+        <div class="icd-item">
+          <span class="icd-num" data-cd="secs">--</span>
+          <span class="icd-lab">
+            <span class="l-en">Sec</span>
+            <span class="l-ne">सेकेन्ड</span>
+          </span>
+        </div>
+      </div>
+      <button class="intro-open" id="openBtn">
+        <span class="l-en">Open Invitation</span>
+        <span class="l-ne">निमन्त्रणा खोल्नुहोस्</span>
+      </button>
+      <p class="intro-hint">
+        <span class="l-en">turn on sound for the full experience</span>
+        <span class="l-ne">पूर्ण अनुभवका लागि आवाज खोल्नुहोस्</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ BACKGROUND MUSIC ============ -->
+  <audio id="bgm" loop preload="auto">
+    <source src="assets/media/music.mp3" type="audio/mp3" />
+    <source src="assets/media/music.mpeg" type="audio/mpeg" />
+  </audio>
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music" hidden>
+    <svg viewBox="0 0 24 24" class="ico-on" width="22" height="22"><path fill="currentColor" d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4.03v8.06A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg>
+    <svg viewBox="0 0 24 24" class="ico-off" width="22" height="22"><path fill="currentColor" d="M3 10v4h4l5 5V5L7 10H3zm16.5 2 2.3-2.3-1.4-1.4L18 10.6 15.7 8.3l-1.4 1.4L16.6 12l-2.3 2.3 1.4 1.4L18 13.4l2.3 2.3 1.4-1.4z"/></svg>
+  </button>
+
+  <!-- ============ MAIN CARD ============ -->
+  <main id="card" class="card">
+
+    <div class="sparks" id="sparks" aria-hidden="true"></div>
+    <div class="bloom" id="bloom" aria-hidden="true"></div>
+
+    <!-- ===== 1 · HERO (invitation artwork) ===== -->
+    <section class="screen hero" id="hero">
+      <img class="hero-card l-en" src="assets/media/hero.png" alt="Together with their families, Pratik & Nisha joyfully invite you to celebrate their wedding" fetchpriority="high" decoding="async" />
+      <img class="hero-card l-ne" src="assets/media/nepali-hero.png" alt="हाम्रो परिवारको तर्फबाट प्रतिक र निशाको शुभ विवाहको हार्दिक निमन्त्रणा" fetchpriority="high" decoding="async" />
+    </section>
+
+    <!-- ===== 2 · THE WEDDING DATE ===== -->
+    <section class="screen wedding-date-sec">
+      <div class="divider"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#c9a24a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#9e1b22"/><path d="M150 17 q20 -10 40 0" fill="none" stroke="#4d6a2e" stroke-width="1.6"/></svg></div>
+      <div class="panel curvy reveal zoom-in">
+        <p class="eyebrow">
+          <span class="l-en">The Wedding Date</span>
+          <span class="l-ne">शुभ विवाहको मिति</span>
+        </p>
+        <div class="wedding-date-display">
+          <div class="wd-day l-en">Saturday</div>
+          <div class="wd-day l-ne">शनिवार</div>
+          
+          <div class="wd-main-date l-en">December 5, 2026</div>
+          <div class="wd-main-date l-ne">१९ मंसिर २०८३</div>
+          
+          <div class="wd-formatted l-en">19<sup>th</sup> Mangsir 2083 (B.S.)</div>
+          <div class="wd-formatted l-ne">५ डिसेम्बर २०२६ (इ.सं.)</div>
+        </div>
+      </div>
+        
+        <div class="orn-divider"><span>&#10047;</span></div>
+        
+        <div class="unlock-cue show" style="opacity: 1;">
+          <span>
+            <span class="l-en">Scroll to explore</span>
+            <span class="l-ne">तल स्क्रोल गर्नुहोस्</span>
+          </span>
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 16 6 10l1.4-1.4L12 13.2l4.6-4.6L18 10z"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3 · COUNTDOWN (wedding) ===== -->
+    <section class="screen countdown-sec gated">
+      <div class="divider"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#c9a24a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#9e1b22"/><path d="M150 17 q20 -10 40 0" fill="none" stroke="#4d6a2e" stroke-width="1.6"/></svg></div>
+      <p class="section-script reveal slide-down">
+        <span class="l-en">Counting Down</span>
+        <span class="l-ne">शुभ पलको प्रतिक्षा</span>
+      </p>
+      <div class="orn-divider reveal zoom-in"><span>&#10047;</span></div>
+
+      <div class="cd-block curvy reveal zoom-in">
+        <p class="cd-title">
+          <span class="l-en">To the Wedding</span>
+          <span class="l-ne">शुभ विवाह</span>
+        </p>
+        <p class="cd-sub">
+          <span class="l-en">Saturday &middot; 5<sup>th</sup> December 2026</span>
+          <span class="l-ne">शनिवार &middot; १९ मंसिर २०८३</span>
+        </p>
+        <div class="countdown" data-target="2026-12-05T12:00:00+05:45">
+          <div class="cd-item">
+            <span class="cd-num" data-cd="days">--</span>
+            <span class="cd-lab">
+              <span class="l-en">Days</span>
+              <span class="l-ne">दिन</span>
+            </span>
+          </div>
+          <div class="cd-item">
+            <span class="cd-num" data-cd="hours">--</span>
+            <span class="cd-lab">
+              <span class="l-en">Hrs</span>
+              <span class="l-ne">घण्टा</span>
+            </span>
+          </div>
+          <div class="cd-item">
+            <span class="cd-num" data-cd="mins">--</span>
+            <span class="cd-lab">
+              <span class="l-en">Min</span>
+              <span class="l-ne">मिनेट</span>
+            </span>
+          </div>
+          <div class="cd-item">
+            <span class="cd-num" data-cd="secs">--</span>
+            <span class="cd-lab">
+              <span class="l-en">Sec</span>
+              <span class="l-ne">सेकेन्ड</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4 · FAMILY MESSAGE ===== -->
+    <section class="screen family-message gated">
+      <div class="divider"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#c9a24a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#9e1b22"/><path d="M150 17 q20 -10 40 0" fill="none" stroke="#4d6a2e" stroke-width="1.6"/></svg></div>
+      <p class="section-script reveal slide-down">
+        <span class="l-en">Family Message</span>
+        <span class="l-ne">परिवारको सन्देश</span>
+      </p>
+      <div class="orn-divider reveal zoom-in"><span>&#10047;</span></div>
+      <div class="story-card curvy reveal slide-left">
+        <p class="fam-msg-side">
+          <span class="l-en">From the Groom&rsquo;s Family (Ghimire Family)</span>
+          <span class="l-ne">वर पक्षबाट (घिमिरे परिवार)</span>
+        </p>
+        <div class="quote-mark">&ldquo;</div>
+        <p class="story-text l-en">From holding your little hand to watching you hold hers forever, our hearts are full. May your love grow stronger with every passing day.<br><br>With all our love and blessings &#10084;&#65039;</p>
+        <p class="story-text l-ne">तिम्रो सानो हात समातेर हिँडाएको दिनदेखि, अब उसको हात समातेको हेर्दासम्म &mdash; हाम्रो हृदय भरिएको छ। तिम्रो प्रेम हरेक दिन अझ गहिरो होस्।<br><br>हाम्रो सम्पूर्ण माया र आशीर्वादका साथ &#10084;&#65039;</p>
+        <div class="story-foot">&#10084;</div>
+      </div>
+      <div class="fam-amp reveal zoom-in">&#10047;</div>
+      <div class="story-card curvy reveal slide-right">
+        <p class="fam-msg-side">
+          <span class="l-en">From the Bride&rsquo;s Family (Maratta Family)</span>
+          <span class="l-ne">वधु पक्षबाट (मराट्टा परिवार)</span>
+        </p>
+        <div class="quote-mark">&ldquo;</div>
+        <p class="story-text l-en">Our little girl has found her forever. Wishing you a lifetime of love, joy, and beautiful memories. &#10084;&#65039;</p>
+        <p class="story-text l-ne">हाम्री सानी छोरीले आफ्नो सधैंको साथी पाइन्। तिमीहरूलाई जीवनभरको प्रेम, खुसी र सुन्दर सम्झनाहरूको शुभकामना। &#10084;&#65039;</p>
+        <div class="story-foot">&#10084;</div>
+      </div>
+    </section>
+
+    <!-- ===== 5 · MOMENTS (stacked photo cards) ===== -->
+    <section class="screen gallery-sec gated">
+      <div class="divider"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#c9a24a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#9e1b22"/><path d="M150 17 q20 -10 40 0" fill="none" stroke="#4d6a2e" stroke-width="1.6"/></svg></div>
+      <p class="section-script reveal slide-down">
+        <span class="l-en">Our Beautiful Moments</span>
+        <span class="l-ne">हाम्रा सुन्दर पलहरू</span>
+      </p>
+      <div class="orn-divider reveal zoom-in"><span>&#10047;</span></div>
+      <div class="stack-carousel reveal slide-right" id="stackCarousel">
+        <div class="stack-track" id="stackTrack">
+          <figure class="stack-card"><img src="assets/media/img1.jpeg" alt="Pratik and Nisha" loading="lazy" decoding="async" /></figure>
+          <figure class="stack-card"><img src="assets/media/img2.jpeg" alt="Pratik and Nisha" loading="lazy" decoding="async" /></figure>
+          <figure class="stack-card"><img src="assets/media/img3.jpeg" alt="Pratik and Nisha" loading="lazy" decoding="async" /></figure>
+          <figure class="stack-card"><img src="assets/media/img4.jpeg" alt="Pratik and Nisha" loading="lazy" decoding="async" /></figure>
+          <figure class="stack-card"><img src="assets/media/img5.jpeg" alt="Pratik and Nisha" loading="lazy" decoding="async" /></figure>
+          <figure class="stack-card"><img src="assets/media/img6.jpeg" alt="Pratik and Nisha" loading="lazy" decoding="async" /></figure>
+          <figure class="stack-card"><img src="assets/media/img7.jpeg" alt="Pratik and Nisha" loading="lazy" decoding="async" /></figure>
+          <figure class="stack-card"><img src="assets/media/img8.jpeg" alt="Pratik and Nisha" loading="lazy" decoding="async" /></figure>
+        </div>
+      </div>
+      <div class="cdots" id="cdots" aria-hidden="true"></div>
+      <p class="gallery-cap reveal zoom-in">
+        <span class="l-en">Swipe the top card &mdash; moments we&rsquo;ll cherish forever</span>
+        <span class="l-ne">माथिको कार्ड स्वाइप गर्नुहोस् &mdash; जीवनभर सँगाल्ने सम्झनाहरू</span>
+      </p>
+    </section>
+
+    <!-- ===== 6 · PROGRAMMES (artwork) ===== -->
+    <section class="screen programmes gated" id="programmes">
+      <div class="divider"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#c9a24a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#9e1b22"/><path d="M150 17 q20 -10 40 0" fill="none" stroke="#4d6a2e" stroke-width="1.6"/></svg></div>
+      <img class="prog-card l-en reveal slide-up" src="assets/media/section4.png" alt="Our celebrations: Mehendi, Wedding and Reception" loading="lazy" decoding="async" />
+      <img class="prog-card l-ne reveal slide-up" src="assets/media/section4-nepali.png" alt="हाम्रा कार्यक्रमहरू: मेहेन्दी, विवाह र भोज" loading="lazy" decoding="async" />
+    </section>
+
+    <!-- ===== VENUE SECTION ===== -->
+    <section class="screen venue-sec gated">
+      <div class="divider"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#c9a24a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#9e1b22"/><path d="M150 17 q20 -10 40 0" fill="none" stroke="#4d6a2e" stroke-width="1.6"/></svg></div>
+      <p class="section-script reveal slide-down">
+        <span class="l-en">The Venues</span>
+        <span class="l-ne">समारोह स्थलहरू</span>
+      </p>
+      <div class="orn-divider reveal zoom-in"><span>&#10047;</span></div>
+      
+      <!-- Wedding Venue Card -->
+      <div class="venue-card curvy reveal slide-left" style="margin-bottom: 28px;">
+        <div class="venue-type">
+          <span class="l-en">Wedding Ceremony</span>
+          <span class="l-ne">विवाह समारोह</span>
+        </div>
+        <div class="venue-icon">📍</div>
+        <p class="venue-name">
+          <span class="l-en">Chitwan Garden Resort</span>
+          <span class="l-ne">चितवन गार्डन रिसोर्ट</span>
+        </p>
+        <p class="venue-address">
+          <span class="l-en">Bharatpur, Chitwan</span>
+          <span class="l-ne">भरतपुर, चितवन</span>
+        </p>
+        <img src="assets/media/chitwan_garden_resort.jpg" alt="Chitwan Garden Resort" class="venue-img" loading="lazy" decoding="async" />
+        <a href="https://www.google.com/maps/search/?api=1&query=Chitwan+Garden+Resort+Bharatpur+Chitwan" target="_blank" class="venue-btn">
+          <span class="l-en">View on Map</span>
+          <span class="l-ne">नक्सामा हेर्नुहोस्</span>
+        </a>
+      </div>
+
+      <!-- Reception Venue Card -->
+      <div class="venue-card curvy reveal slide-right">
+        <div class="venue-type">
+          <span class="l-en">Reception Party</span>
+          <span class="l-ne">प्रीतिभोज समारोह</span>
+        </div>
+        <div class="venue-icon">📍</div>
+        <p class="venue-name">
+          <span class="l-en">Hotel The Narayani</span>
+          <span class="l-ne">होटल द नारायणी</span>
+        </p>
+        <p class="venue-address">
+          <span class="l-en">Laliguras Chowk, Gaindakot</span>
+          <span class="l-ne">लालिगुराँस चोक, गैंडाकोट</span>
+        </p>
+        <img src="assets/media/hotel_the_narayani.jpg" alt="Hotel The Narayani" class="venue-img" loading="lazy" decoding="async" />
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+The+Narayani+Laligurans+Chowk+Gaindakot" target="_blank" class="venue-btn">
+          <span class="l-en">View on Map</span>
+          <span class="l-ne">नक्सामा हेर्नुहोस्</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== 7 · FAMILY & POOJA DETAILS ===== -->
+    <section class="screen details gated">
+      <div class="divider"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#c9a24a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#9e1b22"/><path d="M150 17 q20 -10 40 0" fill="none" stroke="#4d6a2e" stroke-width="1.6"/></svg></div>
+      <p class="section-script reveal slide-down">
+        <span class="l-en">With Our Families</span>
+        <span class="l-ne">हाम्रो परिवार</span>
+      </p>
+      <div class="orn-divider reveal zoom-in"><span>&#10047;</span></div>
+
+      <div class="pooja-card curvy reveal zoom-in">
+        <p class="dt-label">
+          <span class="l-en">Pooja &amp; Mehendi Ceremony</span>
+          <span class="l-ne">पूजा र मेहेन्दी समारोह</span>
+        </p>
+        <p class="dt-date">
+          <span class="l-en">4<sup>th</sup> December 2026</span>
+          <span class="l-ne">१८ मंसिर २०८३</span>
+        </p>
+      </div>
+
+      <div class="fam-card curvy reveal slide-right">
+        <p class="fam-side">
+          <span class="l-en">The Bride&rsquo;s Family</span>
+          <span class="l-ne">वधु पक्ष</span>
+        </p>
+        <div class="fam-rows">
+          <p>
+            <span>
+              <span class="l-en">Family</span>
+              <span class="l-ne">परिवार</span>
+            </span>
+            <span class="l-en">Maratta Family</span>
+            <span class="l-ne">मराट्टा परिवार</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="fam-amp reveal zoom-in">&#10047;</div>
+
+      <div class="fam-card curvy reveal slide-left">
+        <p class="fam-side">
+          <span class="l-en">The Groom&rsquo;s Family</span>
+          <span class="l-ne">वर पक्ष</span>
+        </p>
+        <div class="fam-rows">
+          <p>
+            <span>
+              <span class="l-en">Family</span>
+              <span class="l-ne">परिवार</span>
+            </span>
+            <span class="l-en">Ghimire Family</span>
+            <span class="l-ne">घिमिरे परिवार</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 8 · GUESTBOOK ===== -->
+    <section class="screen guestbook closing-sec gated">
+      <div class="divider"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#c9a24a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#9e1b22"/><path d="M150 17 q20 -10 40 0" fill="none" stroke="#4d6a2e" stroke-width="1.6"/></svg></div>
+      <p class="section-script reveal slide-down">
+        <span class="l-en">Leave a Message</span>
+        <span class="l-ne">शुभकामना सन्देश</span>
+      </p>
+      <div class="orn-divider reveal zoom-in"><span>&#10047;</span></div>
+      <div class="gb-card curvy reveal zoom-in">
+        <form id="gbForm" class="gb-form">
+          <label class="gb-fld">
+            <span>
+              <span class="l-en">Your Name</span>
+              <span class="l-ne">तपाईंको नाम</span>
+            </span>
+            <input type="text" id="gbNameInput" name="name" placeholder="Full name" required />
+          </label>
+          <label class="gb-fld">
+            <span>
+              <span class="l-en">Your Wishes</span>
+              <span class="l-ne">तपाईंको शुभकामना</span>
+            </span>
+            <textarea id="gbMsgInput" name="msg" rows="3" placeholder="Write a blessing for the couple…" required></textarea>
+          </label>
+          <button type="submit" class="gb-send">
+            <span class="l-en">Send Wishes</span>
+            <span class="l-ne">शुभकामना पठाउनुहोस्</span>
+          </button>
+        </form>
+        <p id="gbThanks" class="gb-thanks" hidden>
+          <span class="l-en">Thank you for your blessing! &#10084;</span>
+          <span class="l-ne">हजुरको शुभकामनाका लागि धन्यवाद! &#10084;</span>
+        </p>
+        <button type="button" id="gbToggle" class="gb-toggle">See Messages</button>
+        <div id="gbList" class="gb-list" hidden></div>
+      </div>
+    </section>
+
+    <!-- ===== 9 · FOOTER ===== -->
+    <footer class="screen footer gated">
+      <div class="divider light"><svg viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M14 26 Q170 4 326 26" fill="none" stroke="#e6cd8a" stroke-width="2"/><circle cx="170" cy="13" r="3.4" fill="#e6cd8a"/></svg></div>
+      <h2 class="footer-names">
+        <span class="l-en">Pratik &amp; Nisha</span>
+        <span class="l-ne">प्रतिक र निशा</span>
+      </h2>
+      <div class="orn-divider light"><span>&#10084;</span></div>
+      <p class="footer-script">
+        <span class="l-en">With love &amp; gratitude</span>
+        <span class="l-ne">माया र कृतज्ञताका साथ</span>
+      </p>
+      <p class="footer-meta">
+        <span class="l-en">Saturday, 5<sup>th</sup> December 2026</span>
+        <span class="l-ne">शनिवार, १९ मंसिर २०८३</span>
+      </p>
+      <p class="footer-tag">#PratikWedsNisha</p>
+    </footer>
+
+  </main>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
